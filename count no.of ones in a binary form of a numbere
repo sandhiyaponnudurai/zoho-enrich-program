@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+  int num,i,k=0,count=0,n,arr[10];
+  scanf("%d",&num);
+  
+  while(num>0)
+  {
+    n=num;
+    while(n>1)
+    {
+      n=n-2;
+    }
+    arr[k++]=n;
+    num=num/2;
+  }
+  
+  for(i=0;i<k;i++)
+  {
+    if(arr[i]==1)
+    { 
+      count++;
+    }
+  }
+  
+  printf("%d",count);
+  
+}
