@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+void uniquesubstring(char s[],int n);
+void uniquesubstring(char s[],int n)
+{
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(s[i]==s[j]&&s[i]!='*'&&s[j]!='*')
+            {
+                s[j]='*';
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(s[i]!='*')
+        {
+            printf("%c",s[i]);
+        }
+    }
+}
+int main()
+{
+    char str[100];
+    scanf("%s",str);
+    int len=strlen(str);
+    uniquesubstring(str,len);
+}
